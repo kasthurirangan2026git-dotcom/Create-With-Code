@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TopDownshooter/Scenes/Prototype 2.unity
-    guid: f0196d95ff9244ffaa65879ba7824fd4
-  - enabled: 1
-    path: Assets/PlayerControl/Scenes/Prototype 1.unity
+    path: Assets/_PlayerControl/Scenes/Prototype 1.unity
     guid: 84729eeda748340d0955715b6a50b370
   - enabled: 1
-    path: Assets/FlightSimuletor/Scene/Challenge 1.unity
+    path: Assets/_FlightSimuletor/Scene/Challenge 1.unity
     guid: b6cc3e14dbc3342c8ab192babf679766
+  - enabled: 1
+    path: Assets/_TopDownshooter/Scenes/Prototype 2.unity
+    guid: f0196d95ff9244ffaa65879ba7824fd4
+  - enabled: 1
+    path: Assets/_Play Fetch/Challenge 2.unity
+    guid: f695fe0c51d8449d2b49648dad174255
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e12887efcafb7a34ea5f514015c02d2a, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: da38a86c676f67541b9150694bf48afe, type: 3}
