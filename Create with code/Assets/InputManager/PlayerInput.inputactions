@@ -41,6 +41,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "22a9140c-9457-46ec-9cd9-15436d0a563a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseEnter",
+                    "type": "Value",
+                    "id": "e44acb97-c189-473d-a2ef-e372c5c13197",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -81,17 +99,6 @@
                     "name": "Down",
                     "id": "2001fadc-c631-4ff9-bed9-0f15cc420b40",
                     "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Left",
-                    "id": "336f5a76-a3bc-4334-9bbe-9f66dac60f7b",
-                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -250,6 +257,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f49a79e2-a484-40f9-8020-f7f2a27f45e7",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "660fdacc-e88b-4ba4-81d2-5af25a2f5b16",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseEnter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

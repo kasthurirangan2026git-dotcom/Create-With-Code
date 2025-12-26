@@ -127,6 +127,24 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""22a9140c-9457-46ec-9cd9-15436d0a563a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseEnter"",
+                    ""type"": ""Value"",
+                    ""id"": ""e44acb97-c189-473d-a2ef-e372c5c13197"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -167,17 +185,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": ""Down"",
                     ""id"": ""2001fadc-c631-4ff9-bed9-0f15cc420b40"",
                     ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left"",
-                    ""id"": ""336f5a76-a3bc-4334-9bbe-9f66dac60f7b"",
-                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -338,6 +345,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f49a79e2-a484-40f9-8020-f7f2a27f45e7"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""660fdacc-e88b-4ba4-81d2-5af25a2f5b16"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseEnter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -383,6 +412,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Driving_Fly = m_Driving.FindAction("Fly", throwIfNotFound: true);
         m_Driving_Fire = m_Driving.FindAction("Fire", throwIfNotFound: true);
         m_Driving_Jump = m_Driving.FindAction("Jump", throwIfNotFound: true);
+        m_Driving_Click = m_Driving.FindAction("Click", throwIfNotFound: true);
+        m_Driving_MouseEnter = m_Driving.FindAction("MouseEnter", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -467,6 +498,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Driving_Fly;
     private readonly InputAction m_Driving_Fire;
     private readonly InputAction m_Driving_Jump;
+    private readonly InputAction m_Driving_Click;
+    private readonly InputAction m_Driving_MouseEnter;
     /// <summary>
     /// Provides access to input actions defined in input action map "Driving".
     /// </summary>
@@ -494,6 +527,14 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Driving/Jump".
         /// </summary>
         public InputAction @Jump => m_Wrapper.m_Driving_Jump;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/Click".
+        /// </summary>
+        public InputAction @Click => m_Wrapper.m_Driving_Click;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/MouseEnter".
+        /// </summary>
+        public InputAction @MouseEnter => m_Wrapper.m_Driving_MouseEnter;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -532,6 +573,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @MouseEnter.started += instance.OnMouseEnter;
+            @MouseEnter.performed += instance.OnMouseEnter;
+            @MouseEnter.canceled += instance.OnMouseEnter;
         }
 
         /// <summary>
@@ -555,6 +602,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @MouseEnter.started -= instance.OnMouseEnter;
+            @MouseEnter.performed -= instance.OnMouseEnter;
+            @MouseEnter.canceled -= instance.OnMouseEnter;
         }
 
         /// <summary>
@@ -649,5 +702,19 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJump(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Click" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnClick(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MouseEnter" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouseEnter(InputAction.CallbackContext context);
     }
 }

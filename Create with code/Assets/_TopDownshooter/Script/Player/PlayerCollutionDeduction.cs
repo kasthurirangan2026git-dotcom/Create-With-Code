@@ -3,11 +3,11 @@ using UnityEngine;
 public class PlayerCollutionDeduction : MonoBehaviour
 {   
     
-    private PlayerHealthmanager healthmanager;
+    private PlayerHealthanager healthmanager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        healthmanager = FindAnyObjectByType<PlayerHealthmanager>();
+        healthmanager = FindAnyObjectByType<PlayerHealthanager>();
     }
     
 

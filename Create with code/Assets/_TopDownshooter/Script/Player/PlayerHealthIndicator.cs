@@ -9,12 +9,12 @@ public class PlayerHealthIndicator : MonoBehaviour
     private Color Red = new Color (225,0,0);
     
   
-  private PlayerHealthmanager healthmanager;
+  private PlayerHealthanager healthmanager;
 
 
     void Awake()
     {
-        healthmanager = FindAnyObjectByType<PlayerHealthmanager>();
+        healthmanager = FindAnyObjectByType<PlayerHealthanager>();
         
     }
 

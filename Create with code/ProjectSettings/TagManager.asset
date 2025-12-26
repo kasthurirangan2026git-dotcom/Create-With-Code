@@ -12,6 +12,27 @@ TagManager:
   - Money
   - Powerup
   - EnemyBall
+  - Enemy
+  - PlayerGoal
+  - S1Enemy
+  - S2Enemy
+  - S3Enemy
+  - ShootingPower
+  - SmashPower
+  - RocketLancher
+  - PushPower
+  - RangeEnemyBullet
+  - LongRangeEnemyBullet
+  - MaleeEnemy
+  - PlayerBullet
+  - HealthPotion
+  - TargetCommon
+  - TargetRare
+  - TargetEpic
+  - TargetBomb
+  - Sensor
+  - Bad
+  - Target
   layers:
   - Default
   - TransparentFX

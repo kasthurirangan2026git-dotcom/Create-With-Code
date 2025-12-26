@@ -11,6 +11,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Transform _playerTransform;
+    [SerializeField]
+    private GameObject _PlayerFirePoint;
+    private PlayerBulletSpawnManager playerBulletSpawnManager;
+
+    void Start()
+    {
+        playerBulletSpawnManager = _PlayerFirePoint.GetComponent<PlayerBulletSpawnManager>();
+    }
 
     void Update()
     {
@@ -21,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue inputValue)
     {
         _inputValue = inputValue.Get<Vector2>();
+    }
+    void OnFire()
+    {
+        playerBulletSpawnManager.BulletSpawn();
+       
     }
 
 

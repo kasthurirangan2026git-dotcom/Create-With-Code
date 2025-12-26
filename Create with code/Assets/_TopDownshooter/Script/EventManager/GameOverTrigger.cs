@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameOverTrigger : MonoBehaviour
 { 
-    private PlayerHealthmanager playerHealthmanager;
+    private PlayerHealthanager playerHealthmanager;
     private GameOverManager gameOverManager;
     [SerializeField]
     private AudioClip audioClip;
@@ -11,7 +11,7 @@ public class GameOverTrigger : MonoBehaviour
 
     void Awake()
     {
-        playerHealthmanager = FindAnyObjectByType<PlayerHealthmanager>();
+        playerHealthmanager = FindAnyObjectByType<PlayerHealthanager>();
         gameOverManager  = FindAnyObjectByType<GameOverManager>();
         audioSource = GetComponent<AudioSource>();
 
